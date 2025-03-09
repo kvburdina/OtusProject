@@ -7,7 +7,7 @@ import (
 
 func main() {
 	name := "Ksu"
-	sname := "Bu"
+	sname := "Bur"
 	fmt.Printf("Hello everybody. My name is %s %s.\n", name, sname)
 	currentTime := time.Now()
 	weekday := currentTime.Weekday()
