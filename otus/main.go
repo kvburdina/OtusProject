@@ -6,5 +6,6 @@ import (
 
 func main() {
 	name := "Ksu"
-	fmt.Printf("Hello everybody. My name is %s", name)
+	sname := "Bu"
+	fmt.Printf("Hello everybody. My name is %s %s", name, sname)
 }
