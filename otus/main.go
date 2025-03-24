@@ -7,7 +7,7 @@ import (
 
 func main() {
 
-	n := 7
+	n := 8
 	black := "#"
 	withe := " "
 	current := black
