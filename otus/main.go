@@ -2,14 +2,35 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"strings"
 )
 
 func main() {
-	name := "Ksu"
-	sname := "Bur"
-	fmt.Printf("Hello everybody. My name is %s %s.\n", name, sname)
-	currentTime := time.Now()
-	weekday := currentTime.Weekday()
-	fmt.Printf("Today is %s", weekday)
+
+	n := 7
+	black := "#"
+	withe := " "
+	current := black
+	isWithe := false
+
+	builder := strings.Builder{}
+
+	for i := 1; i <= n; i++ {
+
+		for j := 1; j <= n; j++ {
+
+			builder.WriteString(current)
+
+			if n%2 == 0 && j != n || n%2 != 0 {
+				isWithe = !isWithe
+			}
+			if isWithe {
+				current = withe
+			} else {
+				current = black
+			}
+		}
+		builder.WriteString("\n")
+	}
+	fmt.Println(builder.String())
 }
