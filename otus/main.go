@@ -9,9 +9,9 @@ func main() {
 
 	n := 8
 	black := "#"
-	withe := " "
+	white := " "
 	current := black
-	isWithe := false
+	iswhite := false
 
 	builder := strings.Builder{}
 
@@ -22,10 +22,10 @@ func main() {
 			builder.WriteString(current)
 
 			if n%2 == 0 && j != n || n%2 != 0 {
-				isWithe = !isWithe
+				iswhite = !iswhite
 			}
-			if isWithe {
-				current = withe
+			if iswhite {
+				current = white
 			} else {
 				current = black
 			}
