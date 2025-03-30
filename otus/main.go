@@ -2,14 +2,35 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"strings"
+)
+
+const (
+	black = "#"
+	white = " "
 )
 
 func main() {
-	name := "Ksu"
-	sname := "Bur"
-	fmt.Printf("Hello everybody. My name is %s %s.\n", name, sname)
-	currentTime := time.Now()
-	weekday := currentTime.Weekday()
-	fmt.Printf("Today is %s", weekday)
+
+	var n int
+	fmt.Print("Введите размер шахматной доски: ")
+	fmt.Scanf("%d", &n)
+
+	builder := strings.Builder{}
+
+	for i := 1; i <= n; i++ {
+
+		for j := 1; j <= n; j++ {
+
+			if (i+j)%2 == 0 {
+				builder.WriteString(black)
+			} else {
+				builder.WriteString(white)
+			}
+		}
+
+		builder.WriteString("\n")
+	}
+
+	fmt.Println(builder.String())
 }
