@@ -5,13 +5,16 @@ import (
 	"strings"
 )
 
+const (
+	black = "#"
+	white = " "
+)
+
 func main() {
 
-	n := 8
-	black := "#"
-	white := " "
-	current := black
-	iswhite := false
+	var n int
+	fmt.Print("Введите размер шахматной доски: ")
+	fmt.Scanf("%d", &n)
 
 	builder := strings.Builder{}
 
@@ -19,18 +22,15 @@ func main() {
 
 		for j := 1; j <= n; j++ {
 
-			builder.WriteString(current)
-
-			if n%2 == 0 && j != n || n%2 != 0 {
-				iswhite = !iswhite
-			}
-			if iswhite {
-				current = white
+			if (i+j)%2 == 0 {
+				builder.WriteString(black)
 			} else {
-				current = black
+				builder.WriteString(white)
 			}
 		}
+
 		builder.WriteString("\n")
 	}
+
 	fmt.Println(builder.String())
 }
